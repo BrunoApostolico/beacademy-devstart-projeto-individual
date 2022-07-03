@@ -23,7 +23,11 @@ class ClientsFactory extends Factory
             'rg'=>$this->faker->numerify('##########'),
             'phone1'=>$this->faker->phoneNumber(),
             'phone2'=>$this->faker->phoneNumber(),
-            'email'=>$this->faker->email()
+            'email'=>$this->faker->email(),
+            'id_address'=>$this->faker->numerify('##'),
+            'address_number'=>$this->faker->numerify('#####'),
+            'address_complement'=> 'Lt Qd Casa'
+
         ];
     }
 }
