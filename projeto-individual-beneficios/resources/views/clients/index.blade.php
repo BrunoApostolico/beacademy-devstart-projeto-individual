@@ -46,4 +46,7 @@
         @endforeach
         </tbody>
     </table>
+    <div class="justify-content-center pagination">
+        {{ $clients->links('pagination::bootstrap-4') }}
+    </div>
 @endsection
