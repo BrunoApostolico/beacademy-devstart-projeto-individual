@@ -2,10 +2,10 @@
 @section('title','Listagem de Clientes')
 @section('body')
 
-    <h1>Listagem de Clientes</h1>
+    <h1>Clientes</h1>
 
-    <table class="table">
-        <thead class="text-center">
+    <table class="table table-hover">
+        <thead class="text-center table-dark">
         <tr>
             <th scope="col">Matricula</th>
             <th scope="col">Nome</th>
@@ -26,7 +26,7 @@
                 <td>{{ $client->email }}</td>
                 <td>{{ date('d/m/Y', strtotime($client->created_at)) }}</td>
                 <td><a href="{{ route('clients.show', $client->id) }}"
-                       class="btn btn-sm btn-info text-white">Visualizar </a></td>
+                       class="btn btn-sm btn-outline-dark">Visualizar </a></td>
             </tr>
         @endforeach
         </tbody>

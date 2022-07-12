@@ -21,4 +21,9 @@ class ClientController extends Controller
 
         return view('clients.show', compact('client'));
     }
+
+    public function create()
+    {
+        dd('Create');
+    }
 }

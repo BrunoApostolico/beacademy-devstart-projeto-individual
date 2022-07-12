@@ -5,7 +5,7 @@
     <h1>Cliente {{ $client->name }}</h1>
 
     <table class="table">
-        <thead class="text-center">
+        <thead class="text-center table-dark">
         <tr>
             <th scope="col">Matricula</th>
             <th scope="col">Nome</th>

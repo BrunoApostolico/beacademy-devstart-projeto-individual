@@ -1,19 +1,28 @@
-<!doctype html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Listagem de Usuários</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-</head>
-<body>
-<div class="container">
-    <h1>Listagem de Usuários</h1>
-    <table class="table">
-        <thead class="text-center">
+@extends('template.users')
+@section('title', 'Listagem de Usuários')
+@section('body')
+    <h1>Usuários do Sistema</h1>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm mt-2 mb-5">
+                <a href="{{ route('users.create') }}" class="btn btn-outline-primary">Novo Usuário</a>
+            </div>
+            <div class="col-sm mt-2 mb-5">
+                <form action="{{ route('users.index') }}" method="GET">
+                    <div class="input-group">
+                        <input type="search" class="form-control rounded" name="search" />
+                        <button type="submit" class="btn btn-outline-primary">Pesquisar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <table class="table table-hover">
+        <thead class="text-center table-dark">
         <tr>
+            <th scope="col">Foto</th>
             <th scope="col">Id</th>
             <th scope="col">Nome</th>
             <th scope="col">Email</th>
@@ -24,15 +33,23 @@
         <tbody class="text-center">
         @foreach($users as $user)
             <tr>
+                @if($user->image)
+                    <th><img src=" {{ asset('storage/'.$user->image) }}" width="50px" height="50px" class="rounded-circle"/></th>
+                @else
+                    <th><img src=" {{ asset('storage/profile/avatar.jpg') }}" width="50px" height="50px" class="rounded-circle"/></th>
+                @endif
                 <th scope="row">{{ $user->id }}</th>
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
                 <td>{{ date('d/m/Y - H:i', strtotime($user->created_at)) }}</td>
-                <td><a href="{{ route('users.show', $user->id) }}" class="btn btn-sm btn-info text-white">Visualizar </a> </td>
+                <td>
+                    <a href="{{ route('users.show', $user->id) }}" class="btn btn-sm btn-outline-dark">Visualizar</a>
+                </td>
             </tr>
         @endforeach
         </tbody>
     </table>
-</div>
-</body>
-</html>
+    <div class="justify-content-center pagination">
+        {{ $users->links('pagination::bootstrap-4') }}
+    </div>
+@endsection
