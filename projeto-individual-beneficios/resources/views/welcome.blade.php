@@ -21,8 +21,8 @@
     </style>
 </head>
 <body class="antialiased">
-    <div class="relative flex items-top justify-center  bg-gray-100 ">
-        <img id="myImg" src="{{Storage::url('logo.svg')}}" alt="" width=""/>
+    <div class="relative flex items-top justify-center bg-gray-100 pt-8">
+        <img id="myImg" src="{{Storage::url('logo.png')}}" alt="" width="40%"/>
     </div>
 
 <div class="relative flex items-top justify-center bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
@@ -31,16 +31,16 @@
             @auth
                 <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
             @else
-                <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+                <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Entrar</a>
 
                 @if (Route::has('register'))
-                    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Registrar-se</a>
                 @endif
             @endauth
         </div>
     @endif
-    <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-        <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
+    <div class="max-w-6xl mx-auto sm:px-10 lg:px-8">
+        <div class="flex justify-center ">
             <h1>Projeto Individual - Cadastro de Beneficiários</h1>
         </div>
         <h3>Em desenvolvimento...</h3>
