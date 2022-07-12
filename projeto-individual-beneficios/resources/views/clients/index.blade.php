@@ -4,6 +4,21 @@
 
     <h1>Clientes</h1>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-sm mt-2 mb-3">
+                <a href="{{ route('clients.create') }}" class="btn btn-sm btn-outline-primary">Novo Cliente</a>
+            </div>
+            <div class="col-sm mt-2 mb-3">
+                <form action="{{ route('clients.index') }}" method="GET">
+                    <div class="input-group">
+                        <input type="search" class="form-control rounded" name="search" />
+                        <button type="submit" class="btn btn-sm btn-outline-primary">Pesquisar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     <table class="table table-hover">
         <thead class="text-center table-dark">
         <tr>

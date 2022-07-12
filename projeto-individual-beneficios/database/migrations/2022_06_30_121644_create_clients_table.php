@@ -20,9 +20,9 @@ return new class extends Migration
             $table->date('date_birth');
             $table->string('cpf',11);
             $table->string('rg',10);
-            $table->integer('id_address');
-            $table->integer('address_number');
-            $table->string('address_complement',10);
+//            $table->integer('id_address');
+//            $table->integer('address_number');
+//            $table->string('address_complement',10);
             $table->string('phone1',20);
             $table->string('phone2',20);
             $table->string('email',40);

@@ -18,4 +18,17 @@ class Client extends Model
         'phone2',
         'email'
     ];
+
+    public function getClients(string $search = null)
+    {
+        $clients = $this->where(function ($query) use ($search) {
+            if($search){
+                $query->where('email', $search);
+                $query->orwhere('name', 'LIKE', "%{$search}%");
+            }
+        })
+            ->paginate(5);
+
+        return $clients;
+    }
 }
