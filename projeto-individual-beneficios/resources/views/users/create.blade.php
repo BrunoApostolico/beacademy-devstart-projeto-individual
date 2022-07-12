@@ -30,6 +30,6 @@
             <label for="image" class="form-label">Selecione uma Imagem</label>
             <input type="file" class="form-control form-control-md" id="image" name="image">
         </div>
-        <button type="submit" class="btn btn-primary">Enviar</button>
+        <button type="submit" class="btn btn-sm btn-outline-primary">Enviar</button>
     </form>
 @endsection

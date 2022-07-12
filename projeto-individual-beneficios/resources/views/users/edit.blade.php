@@ -31,7 +31,8 @@
             <label for="image" class="form-label">Selecione uma Imagem</label>
             <input type="file" class="form-control form-control-md" id="image" name="image">
         </div>
-        <button type="submit" class="btn btn-primary">Atualizar</button>
+        <button type="submit" class="btn btn-sm btn-outline-primary">Atualizar</button>
+        <a href="{{ route('users.index', $user->id) }}" class="btn btn-sm btn-outline-primary">Voltar </a>
     </form>
 
 @endsection

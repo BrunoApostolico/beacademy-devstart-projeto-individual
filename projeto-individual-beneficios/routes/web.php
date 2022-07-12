@@ -7,7 +7,7 @@ use App\Http\Controllers\{
     ViaCepController
 };
 Route::get('/' , function(){
-    return 'Projeto Individual';
+    return view ('welcome');
 });
 
 Route::delete('/users/{id}',[UserController::class, 'destroy'])->name('users.destroy');
