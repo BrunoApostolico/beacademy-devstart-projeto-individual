@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
     UserController,
     ClientController,
+    DependentController,
     ViaCepController
 };
 
@@ -33,6 +34,9 @@ Route::get('/clients/create',[ClientController::class,'create'])->name('clients.
 Route::post('/client', [ClientController::class, 'store'])->name('clients.store');
 Route::get('/clients',[ClientController::class,'index'])->name('clients.index');
 Route::get('/clients/{id}',[ClientController::class,'show'])->name('clients.show');
+
+//ROTAS DEPENDENTES
+Route::get('/dependents', [DependentController::class,'index'])->name('dependents.index');
 
 //VIA CEP WEB SERVICE
 Route::get('/viacep', [ViaCepController::class, 'index'])->name('viacep.index');

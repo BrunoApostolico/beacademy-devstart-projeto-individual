@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Client extends Model
+class Dependent extends Model
 {
     use HasFactory;
 
@@ -14,26 +14,28 @@ class Client extends Model
         'date_birth',
         'cpf',
         'rg',
-        'phone1',
-        'phone2',
-        'email'
+        'relationship'
     ];
 
-    public function getClients(string $search = null)
+    public function getDependents(string $search = null)
     {
-        $clients = $this->where(function ($query) use ($search) {
+        $dependents = $this->where(function ($query) use ($search) {
             if($search){
-                $query->where('email', $search);
-                $query->orwhere('name', 'LIKE', "%{$search}%");
+                $query->where('name', 'LIKE', "%{$search}%");
             }
         })
-            ->paginate(10);
+            ->paginate(5);
 
-        return $clients;
+        return $dependents;
     }
 
     public function dependents()
     {
         return $this->hasMany(Dependent::class);
+    }
+
+    public function client()
+    {
+        return $this->belongsTo(Client::class);
     }
 }

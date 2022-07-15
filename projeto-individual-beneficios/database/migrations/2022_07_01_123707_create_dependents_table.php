@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('dependents', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('client_id')
+            ->constrained('clients')
+            ->onDelete('CASCADE')
+            ->onUpdate('CASCADE');
             $table->timestamps();
             $table->string('name',100);
             $table->date('date_birth');
