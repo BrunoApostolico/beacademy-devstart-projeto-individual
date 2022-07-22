@@ -16,22 +16,18 @@ class DependentController extends Controller
         $this->client = $client;
         $this->dependent = $dependent;
     }
-    public function index($clientId)
+    public function index()
     {
-        if(!$client = $this->client->find($clientId)){
-            return redirect()->back();
-        }
+        $dependents = $this->dependent->all();
 
-        $dependents = $client->dependents()->get();
-
-        return view ('dependents.index', compact('client', 'dependents'));
+        return view('dependents.index',compact('dependents'));
     }
     public function show($clientId)
     {
         if(!$client = $this->client->find($clientId))
             return redirect()->back();
 
-        $dependents = $client->posts()->get();
+        $dependents = $client->dependents()->get();
 
         return view ('dependents.show',compact('client','dependents'));
     }
