@@ -60,7 +60,7 @@ class ClientController extends Controller
     {
         if(!$client = $this->model->find($id))
             return redirect()->route('clients.index');
-        $data = $request->only('name','email');
+        $data = $request->all();
 
         $client->update($data);
 

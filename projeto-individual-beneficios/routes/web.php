@@ -36,6 +36,11 @@ Route::get('/clients',[ClientController::class,'index'])->name('clients.index');
 Route::get('/clients/{id}',[ClientController::class,'show'])->name('clients.show');
 
 //ROTAS DEPENDENTES
+Route::delete('/dependents/{id}',[DependentController::class, 'destroy'])->name('dependents.destroy');
+Route::put('/dependents/{id}',[DependentController::class, 'update'])->name('dependents.update');
+Route::get('/dependents/{id}/edit', [DependentController::class, 'edit'])->name('dependents.edit');
+Route::get('/dependents/{id}/create',[DependentController::class,'create'])->name('dependents.create');
+Route::post('/dependent', [DependentController::class, 'store'])->name('dependents.store');
 Route::get('/dependents', [DependentController::class,'index'])->name('dependents.index');
 Route::get('/clients/{id}/dependents',[DependentController::class,'show'])->name('dependents.show');
 

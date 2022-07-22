@@ -7,7 +7,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm mt-2 mb-3">
-                <a href="{{ route('dependents.create') }}" class="btn btn-sm btn-outline-primary">Novo Dependente</a>
+                <a href="{{ route('dependents.create', ['id' => $client->id ]) }}" class="btn btn-sm btn-outline-primary">Novo Dependente</a>
             </div>
 {{--            <div class="col-sm mt-2 mb-3">--}}
 {{--                <form action="{{ route('dependents.index') }}" method="GET">--}}
@@ -27,7 +27,9 @@
             <th scope="col">Id</th>
             <th scope="col">Nome</th>
             <th scope="col">Filiação</th>
+            <th scope="col">CPF</th>
             <th scope="col">Data de Nascimento</th>
+            <th scope="col">Ações</th>
 
         </tr>
         </thead>
@@ -37,8 +39,19 @@
                 <th scope="row">{{ $dependent->id }}</th>
                 <td>{{ $dependent->name }}</td>
                 <td>{{ $dependent->relationship }}</td>
+                <td>{{ $dependent->cpf }}</td>
                 <td>{{ date('d/m/Y - H:i', strtotime($dependent->created_at)) }}</td>
-
+                <td>
+                    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                        <a href="{{ route('clients.index', $client->id) }}" class="btn btn-sm btn-primary text-white">Voltar </a>
+                        <a href="{{ route('dependents.edit', $dependent->id) }}" class="btn btn-sm btn-warning">Editar</a>
+                        <form action="{{ route('dependents.destroy', $dependent->id) }}" method="POST">
+                            @method('DELETE')
+                            @csrf
+                            <button type="submit" class="btn btn-sm btn-danger text-white">Excluir </button>
+                        </form>
+                    </div>
+                </td>
             </tr>
         @endforeach
         </tbody>

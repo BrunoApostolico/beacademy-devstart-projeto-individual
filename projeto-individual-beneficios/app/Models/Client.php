@@ -18,6 +18,9 @@ class Client extends Model
         'date_birth',
         'cpf',
         'rg',
+        'address',
+        'address_number',
+        'address_complement',
         'phone1',
         'phone2',
         'email'

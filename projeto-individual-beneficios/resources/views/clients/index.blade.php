@@ -42,7 +42,7 @@
                 <td>{{ $client->email }}</td>
                 <td>{{ date('d/m/Y', strtotime($client->created_at)) }}</td>
                 <td>
-                    <a href="{{ route('dependents.show', $client->id) }}" class="btn btn-outline-dark">Dependentes - {{ $client->dependents->count() }}</a>
+                    <a href="{{ route('dependents.show', $client->id) }}" class="btn btn-sm btn-outline-dark">Dependentes - {{ $client->dependents->count() }}</a>
 
                 </td>
                 <td><a href="{{ route('clients.show', $client->id) }}"

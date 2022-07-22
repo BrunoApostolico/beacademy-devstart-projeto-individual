@@ -31,6 +31,18 @@
             <input type="text" class="form-control" id="phone2" name="phone2">
         </div>
         <div class="mb-3">
+            <label for="address" class="form-label">Endereço</label>
+            <input type="text" class="form-control" id="address" name="address">
+        </div>
+        <div class="mb-3">
+            <label for="address_number" class="form-label">Número</label>
+            <input type="text" class="form-control" id="address_number" name="address_number">
+        </div>
+        <div class="mb-3">
+            <label for="address_complement" class="form-label">Complemento</label>
+            <input type="text" class="form-control" id="address_complement" name="address_complement">
+        </div>
+        <div class="mb-3">
             <label for="date_birth" class="form-label">Data de Nascimento</label>
             <input type="date" class="form-control" id="date_birth" name="date_birth">
         </div>

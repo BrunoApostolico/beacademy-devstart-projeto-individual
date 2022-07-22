@@ -12,6 +12,7 @@
             <th scope="col">Cliente</th>
             <th scope="col">Nome</th>
             <th scope="col">Filiação</th>
+            <th scope="col">CPF</th>
             <th scope="col">Data de Nascimento</th>
 
         </tr>
@@ -23,6 +24,7 @@
                 <td>{{ $dependent->client->name }}</td>
                 <td>{{ $dependent->name }}</td>
                 <td>{{ $dependent->relationship }}</td>
+                <td>{{ $dependent->cpf }}</td>
                 <td>{{ date('d/m/Y - H:i', strtotime($dependent->created_at)) }}</td>
 
             </tr>
