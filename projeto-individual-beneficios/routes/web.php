@@ -37,6 +37,7 @@ Route::get('/clients/{id}',[ClientController::class,'show'])->name('clients.show
 
 //ROTAS DEPENDENTES
 Route::get('/dependents', [DependentController::class,'index'])->name('dependents.index');
+Route::get('/clients/{id}/dependents',[DependentController::class,'show'])->name('dependents.show');
 
 //VIA CEP WEB SERVICE
 Route::get('/viacep', [ViaCepController::class, 'index'])->name('viacep.index');

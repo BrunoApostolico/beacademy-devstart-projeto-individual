@@ -26,5 +26,14 @@ class DependentController extends Controller
 
         return view ('dependents.index', compact('client', 'dependents'));
     }
+    public function show($clientId)
+    {
+        if(!$client = $this->client->find($clientId))
+            return redirect()->back();
+
+        $dependents = $client->posts()->get();
+
+        return view ('dependents.show',compact('client','dependents'));
+    }
 
 }

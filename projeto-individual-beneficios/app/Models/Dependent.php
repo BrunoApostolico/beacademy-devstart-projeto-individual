@@ -29,11 +29,6 @@ class Dependent extends Model
         return $dependents;
     }
 
-    public function dependents()
-    {
-        return $this->hasMany(Dependent::class);
-    }
-
     public function client()
     {
         return $this->belongsTo(Client::class);

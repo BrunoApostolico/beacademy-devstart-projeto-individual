@@ -28,6 +28,7 @@
             <th scope="col">Celular</th>
             <th scope="col">Email</th>
             <th scope="col">Data da Filiação</th>
+            <th scope="col">Dependentes</th>
             <th scope="col">Ações</th>
         </tr>
         </thead>
@@ -40,6 +41,10 @@
                 <td>{{ $client->phone2 }}</td>
                 <td>{{ $client->email }}</td>
                 <td>{{ date('d/m/Y', strtotime($client->created_at)) }}</td>
+                <td>
+                    <a href="{{ route('dependents.show', $client->id) }}" class="btn btn-outline-dark">Dependentes - {{ $client->dependents->count() }}</a>
+
+                </td>
                 <td><a href="{{ route('clients.show', $client->id) }}"
                        class="btn btn-sm btn-outline-dark">Visualizar </a></td>
             </tr>

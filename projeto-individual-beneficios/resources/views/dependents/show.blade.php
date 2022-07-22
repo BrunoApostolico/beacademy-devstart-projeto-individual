@@ -1,8 +1,23 @@
 @extends('template.users')
-@section('title', 'Listagem de Dependentes')
+@section('title',"Listagem de Dependentes do {$client->name}")
 @section('body')
 
-    <h1>Listagem de Dependentes</h1>
+    <h1>Dependentes do {{$client->name}}</h1>
+
+{{--    @foreach($dependents as $dependent)--}}
+{{--        <div class="mb-3">--}}
+{{--            <label class="form-label">Identificação Nº:<br><b>{{ $post->id }}</b></label>--}}
+{{--            <br>--}}
+{{--            <label class="form-label">Status:<br><b>{{ $post->active?'Ativo':'Inativo' }}</b></label>--}}
+{{--            <br>--}}
+{{--            <label class="form-label">Título:<br><b>{{ $post->title }}</b></label>--}}
+{{--            <br>--}}
+{{--            <label class="form-label">Postagem:<br></label>--}}
+{{--            <br>--}}
+{{--            <textarea class="form-control" rows="3">{{ $post->post }}</textarea>--}}
+{{--            <br>--}}
+{{--        </div>--}}
+{{--    @endforeach--}}
 
     <table class="table">
         <thead class="text-center">
@@ -32,5 +47,4 @@
     <div class="justify-content-center pagination">
 
     </div>
-
 @endsection
