@@ -6,11 +6,6 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('dependents', function (Blueprint $table) {
@@ -20,10 +15,10 @@ return new class extends Migration
             ->onDelete('CASCADE')
             ->onUpdate('CASCADE');
             $table->timestamps();
-            $table->string('name',100);
+            $table->string('name');
             $table->date('date_birth');
-            $table->string('cpf',11);
-            $table->string('relationship',50);
+            $table->string('cpf');
+            $table->string('relationship');
         });
     }
 
