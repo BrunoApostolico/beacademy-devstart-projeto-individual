@@ -24,25 +24,23 @@ Route::middleware(['auth'])->group(function (){
     Route::post('/user', [UserController::class, 'store'])->name('users.store');
     Route::get('/users',[UserController::class, 'index'])->name('users.index');
     Route::get('/users/{id}',[UserController::class, 'show'])->name('users.show');
+    //ROTAS CLIENTES
+    Route::delete('/clients/{id}',[ClientController::class, 'destroy'])->name('clients.destroy');
+    Route::put('/clients/{id}',[ClientController::class, 'update'])->name('clients.update');
+    Route::get('/clients/{id}/edit', [ClientController::class, 'edit'])->name('clients.edit');
+    Route::get('/clients/create',[ClientController::class,'create'])->name('clients.create');
+    Route::post('/client', [ClientController::class, 'store'])->name('clients.store');
+    Route::get('/clients',[ClientController::class,'index'])->name('clients.index');
+    Route::get('/clients/{id}',[ClientController::class,'show'])->name('clients.show');
+    //ROTAS DEPENDENTES
+    Route::delete('/dependents/{id}',[DependentController::class, 'destroy'])->name('dependents.destroy');
+    Route::put('/dependents/{id}',[DependentController::class, 'update'])->name('dependents.update');
+    Route::get('/dependents/{id}/edit', [DependentController::class, 'edit'])->name('dependents.edit');
+    Route::get('/dependents/{id}/create',[DependentController::class,'create'])->name('dependents.create');
+    Route::post('/dependent', [DependentController::class, 'store'])->name('dependents.store');
+    Route::get('/dependents', [DependentController::class,'index'])->name('dependents.index');
+    Route::get('/clients/{id}/dependents',[DependentController::class,'show'])->name('dependents.show');
 });
-
-//ROTAS CLIENTES
-Route::delete('/clients/{id}',[ClientController::class, 'destroy'])->name('clients.destroy');
-Route::put('/clients/{id}',[ClientController::class, 'update'])->name('clients.update');
-Route::get('/clients/{id}/edit', [ClientController::class, 'edit'])->name('clients.edit');
-Route::get('/clients/create',[ClientController::class,'create'])->name('clients.create');
-Route::post('/client', [ClientController::class, 'store'])->name('clients.store');
-Route::get('/clients',[ClientController::class,'index'])->name('clients.index');
-Route::get('/clients/{id}',[ClientController::class,'show'])->name('clients.show');
-
-//ROTAS DEPENDENTES
-Route::delete('/dependents/{id}',[DependentController::class, 'destroy'])->name('dependents.destroy');
-Route::put('/dependents/{id}',[DependentController::class, 'update'])->name('dependents.update');
-Route::get('/dependents/{id}/edit', [DependentController::class, 'edit'])->name('dependents.edit');
-Route::get('/dependents/{id}/create',[DependentController::class,'create'])->name('dependents.create');
-Route::post('/dependent', [DependentController::class, 'store'])->name('dependents.store');
-Route::get('/dependents', [DependentController::class,'index'])->name('dependents.index');
-Route::get('/clients/{id}/dependents',[DependentController::class,'show'])->name('dependents.show');
 
 //VIA CEP WEB SERVICE
 Route::get('/viacep', [ViaCepController::class, 'index'])->name('viacep.index');
