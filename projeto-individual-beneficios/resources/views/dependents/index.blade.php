@@ -2,7 +2,7 @@
 @section('title', 'Listagem de Dependentes')
 @section('body')
 
-    <h1>Listagem de Dependentes</h1>
+    <h1 class="mt-4">Listagem de Dependentes</h1>
 
     <table class="table">
         <thead class="text-center">

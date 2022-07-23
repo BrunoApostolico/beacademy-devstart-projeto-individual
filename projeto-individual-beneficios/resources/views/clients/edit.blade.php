@@ -2,7 +2,7 @@
 @section('title', "{$client->name}")
 @section('body')
 
-    <h1>Cliente: {{ $client->name }}</h1>
+    <h1 class="mt-4">Cliente: {{ $client->name }}</h1>
 
     @if($errors->any())
         <div class="alert alert-danger" role="alert">
@@ -25,11 +25,23 @@
         </div>
         <div class="mb-3">
             <label for="phone1" class="form-label">Telefone</label>
-            <input type="phone1" class="form-control" id="phone" name="phone1" value="{{ $client->phone1 }}">
+            <input type="text" class="form-control" id="phone" name="phone1" value="{{ $client->phone1 }}">
         </div>
         <div class="mb-3">
             <label for="phone2" class="form-label">Celular</label>
-            <input type="phone2" class="form-control" id="phone2" name="phone2" value="{{ $client->phone2 }}">
+            <input type="text" class="form-control" id="phone2" name="phone2" value="{{ $client->phone2 }}">
+        </div>
+        <div class="mb-3">
+            <label for="address" class="form-label">Endereço</label>
+            <input type="text" class="form-control" id="address" name="address" value="{{ $client->address }}">
+        </div>
+        <div class="mb-3">
+            <label for="address_number" class="form-label">Número</label>
+            <input type="number" class="form-control" id="address_number" name="address_number" value="{{ $client->address_number }}">
+        </div>
+        <div class="mb-3">
+            <label for="address_complement" class="form-label">Celular</label>
+            <input type="text" class="form-control" id="address_complement" name="address_complement" value="{{ $client->address_complement }}">
         </div>
         <button type="submit" class="btn btn-sm btn-outline-primary">Atualizar</button>
         <a href="{{ route('clients.index', $client->id) }}" class="btn btn-sm btn-outline-primary">Voltar </a>

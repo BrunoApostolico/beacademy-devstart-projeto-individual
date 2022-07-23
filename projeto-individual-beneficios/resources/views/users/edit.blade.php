@@ -2,7 +2,7 @@
 @section('title', "Usuário {$user->name}")
 @section('body')
 
-    <h1>Usuário {{ $user->name }}</h1>
+    <h1 class="mt-4">Usuário {{ $user->name }}</h1>
 
     @if($errors->any())
         <div class="alert alert-danger" role="alert">

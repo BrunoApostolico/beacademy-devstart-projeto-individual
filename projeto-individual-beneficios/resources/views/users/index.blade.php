@@ -1,7 +1,7 @@
 @extends('template.users')
 @section('title', 'Listagem de Usuários')
 @section('body')
-    <h1>Usuários do Sistema</h1>
+    <h1 class="mt-4">Usuários do Sistema</h1>
 
     <div class="container">
         <div class="row">

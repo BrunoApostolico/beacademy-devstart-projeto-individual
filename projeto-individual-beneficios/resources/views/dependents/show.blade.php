@@ -2,7 +2,7 @@
 @section('title',"Listagem de Dependentes do {$client->name}")
 @section('body')
 
-    <h1>Dependentes do {{$client->name}}</h1>
+    <h1 class="mt-4">Dependentes do {{$client->name}}</h1>
 
     <div class="container">
         <div class="row">
@@ -40,15 +40,15 @@
                 <td>{{ $dependent->name }}</td>
                 <td>{{ $dependent->relationship }}</td>
                 <td>{{ $dependent->cpf }}</td>
-                <td>{{ date('d/m/Y - H:i', strtotime($dependent->created_at)) }}</td>
+                <td>{{ date('d/m/Y', strtotime($dependent->date_birth)) }}</td>
                 <td>
                     <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                        <a href="{{ route('clients.index', $client->id) }}" class="btn btn-sm btn-primary text-white">Voltar </a>
-                        <a href="{{ route('dependents.edit', $dependent->id) }}" class="btn btn-sm btn-warning">Editar</a>
+                        <a href="{{ route('clients.index', $client->id) }}" class="btn btn-sm btn-outline-primary">Voltar </a>
+                        <a href="{{ route('dependents.edit', $dependent->id) }}" class="btn btn-sm btn-outline-warning">Editar</a>
                         <form action="{{ route('dependents.destroy', $dependent->id) }}" method="POST">
                             @method('DELETE')
                             @csrf
-                            <button type="submit" class="btn btn-sm btn-danger text-white">Excluir </button>
+                            <button type="submit" class="btn btn-sm btn-outline-danger">Excluir </button>
                         </form>
                     </div>
                 </td>

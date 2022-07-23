@@ -2,7 +2,7 @@
 @section('title', $title)
 @section('body')
 
-    <h1>Usuário {{ $user->name }}</h1>
+    <h1 class="mt-4">Usuário {{ $user->name }}</h1>
     <table class="table">
         <thead class="text-center table-dark">
         <tr>
@@ -22,12 +22,12 @@
             <td>{{ date('d/m/Y - H:i', strtotime($user->created_at)) }}</td>
             <td>
                 <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                    <a href="{{ route('users.index', $user->id) }}" class="btn btn-sm btn-primary text-white">Voltar </a>
-                    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-warning">Editar</a>
+                    <a href="{{ route('users.index', $user->id) }}" class="btn btn-sm btn-outline-primary">Voltar </a>
+                    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-outline-warning">Editar</a>
                     <form action="{{ route('users.destroy', $user->id) }}" method="POST">
                         @method('DELETE')
                         @csrf
-                        <button type="submit" class="btn btn-sm btn-danger text-white">Excluir </button>
+                        <button type="submit" class="btn btn-sm btn-outline-danger">Excluir </button>
                     </form>
                 </div>
             </td>

@@ -34,7 +34,7 @@ class Client extends Model
                 $query->orwhere('name', 'LIKE', "%{$search}%");
             }
         })
-            ->paginate(10);
+            ->paginate(6);
 
         return $clients;
     }

@@ -2,7 +2,7 @@
 @section('title', "{$dependent->name}")
 @section('body')
 
-    <h1>Dependente: {{ $dependent->name }}</h1>
+    <h1 class="mt-4">Dependente: {{ $dependent->name }}</h1>
 
     @if($errors->any())
         <div class="alert alert-danger" role="alert">
