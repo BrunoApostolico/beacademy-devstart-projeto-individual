@@ -6,13 +6,13 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
-class UserTest extends TestCase
+class DependentTest extends TestCase
 {
-    public function test_user()
+    public function test_dependent()
     {
         $this->assertTrue(true);
     }
-    public function test_create_user()
+    public function test_create_dependent()
     {
         $this->assertTrue(true);
     }
