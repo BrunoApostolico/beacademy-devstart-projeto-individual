@@ -5,13 +5,10 @@
     <h1 class="mt-4">Listagem de Pagamentos</h1>
     <div class="container">
         <div class="row">
-{{--            <div class="col-sm mt-2 mb-3">--}}
-{{--                <a href="{{ route('payments.create', ['id' => $client->id ]) }}" class="btn btn-sm btn-outline-primary">Novo Pagamento</a>--}}
-{{--            </div>--}}
             <div class="col-sm mt-2 mb-3">
                 <form action="{{ route('payments.index') }}" method="GET">
                     <div class="input-group">
-                        <input type="search" class="form-control rounded" name="search" />
+                        <input type="search" class="form-control rounded" name="search" placeholder="Informe a Matricula" />
                         <button type="submit" class="btn btn-sm btn-outline-primary">Pesquisar</button>
                     </div>
                 </form>
@@ -24,7 +21,7 @@
             <thead class="text-center">
             <tr>
 
-                <th scope="col">Id</th>
+                <th scope="col">Matrícula</th>
                 <th scope="col">Cliente</th>
                 <th scope="col">Data de Pagamento</th>
 
@@ -33,7 +30,7 @@
             <tbody class="text-center">
             @foreach($payments as $payment)
                 <tr>
-                    <th scope="row">{{ $payment->id }}</th>
+                    <th scope="row">{{ $payment->client->id }}</th>
                     <td>{{ $payment->client->name }}</td>
                     <td>{{ date('d/m/Y - H:i', strtotime($payment->date_payment)) }}</td>
 

@@ -29,7 +29,7 @@
                 <td>{{ date('d/m/Y', strtotime($payment->date_payment)) }}</td>
                 <td>
                     <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-                        <a href="{{ route('clients.index', $client->id) }}" class="btn btn-sm btn-outline-primary">Voltar </a>
+                        <a href="{{ route('clients.show', $client->id) }}" class="btn btn-sm btn-outline-primary">Voltar </a>
 {{--                        <a href="{{ route('payments.edit', $payment->id) }}" class="btn btn-sm btn-outline-warning">Editar</a>--}}
 {{--                        <form action="{{ route('payments.destroy', $payment->id) }}" method="POST">--}}
 {{--                            @method('DELETE')--}}

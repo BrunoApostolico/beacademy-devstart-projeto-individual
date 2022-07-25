@@ -8,8 +8,6 @@
         <div class="row">
             <div class="col-sm mt-2 mb-3">
                 <a href="{{ route('payments.create', ['id' => $client->id ]) }}" class="btn btn-sm btn-outline-primary">Novo Pagamento</a>
-            </div>
-            <div class="col-sm mt-2 mb-3">
                 <a href="{{ route('payments.show', ['id' => $client->id ]) }}" class="btn btn-sm btn-outline-primary">Ver Pagamentos</a>
             </div>
         </div>

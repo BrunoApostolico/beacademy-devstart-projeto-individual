@@ -21,9 +21,11 @@ class PaymentController extends Controller
         $this->payment = $payment;
         $this->model = $payment;
     }
-    public function index()
+    public function index(Request $request)
     {
-        $payments = $this->payment->all();
+        $payments = $this->model->getPayments(
+            $request->search ?? ''
+        );
 
         return view('payments.index',compact('payments'));
     }
@@ -50,7 +52,7 @@ class PaymentController extends Controller
 
         $this->model->create($data);
 
-        return redirect()->route('clients.index');
+        return redirect()->route('payments.index');
     }
     public function edit($id)
     {

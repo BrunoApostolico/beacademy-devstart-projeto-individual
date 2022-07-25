@@ -20,7 +20,7 @@ class Payment extends Model
     {
         $payments = $this->where(function ($query) use ($search) {
             if($search){
-                $query->where('name', 'LIKE', "%{$search}%");
+                $query->where('client_id', $search);
             }
         })
             ->paginate(5);
