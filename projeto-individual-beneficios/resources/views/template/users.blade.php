@@ -24,6 +24,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="/clients">Clientes</a>
                                 </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="/payments">Pagamentos</a>
+                                    </li>
                             </ul>
                         </div>
                         <div class="col-3">

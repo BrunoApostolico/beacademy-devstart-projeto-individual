@@ -28,12 +28,15 @@ class UserTest extends TestCase
 
     public function test_create_user()
     {
-        $response = $this->post('/login/create',[
-            'name' => 'Admin',
-            'email' => 'admin@master.com',
-            'password' => '1q2w3e4r',
-            'is_admin' => 1,
+        $user = User::factory()->create();
+        $response = $this->post('/login',[
+            'email' => $user->email,
+            'password'=> 'password'
         ]);
+
+        $this->actingAs($user);
+
+        $response = $this->get('/users/create');
         $response->assertStatus(200);
     }
 }

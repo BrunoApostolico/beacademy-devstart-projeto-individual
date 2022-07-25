@@ -9,14 +9,6 @@
             <div class="col-sm mt-2 mb-3">
                 <a href="{{ route('dependents.create', ['id' => $client->id ]) }}" class="btn btn-sm btn-outline-primary">Novo Dependente</a>
             </div>
-{{--            <div class="col-sm mt-2 mb-3">--}}
-{{--                <form action="{{ route('dependents.index') }}" method="GET">--}}
-{{--                    <div class="input-group">--}}
-{{--                        <input type="search" class="form-control rounded" name="search" />--}}
-{{--                        <button type="submit" class="btn btn-sm btn-outline-primary">Pesquisar</button>--}}
-{{--                    </div>--}}
-{{--                </form>--}}
-{{--            </div>--}}
         </div>
     </div>
 

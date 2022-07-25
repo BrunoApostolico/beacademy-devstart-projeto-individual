@@ -12,14 +12,14 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name');
-            $table->date('date_birth');
+            $table->date('date_birth')->nullable();
             $table->string('cpf');
-            $table->string('rg');
-            $table->string('address');
-            $table->integer('address_number');
-            $table->string('address_complement');
+            $table->string('rg')->nullable();
+            $table->string('address')->nullable();
+            $table->integer('address_number')->nullable();
+            $table->string('address_complement')->nullable();
             $table->string('phone1');
-            $table->string('phone2');
+            $table->string('phone2')->nullable();
             $table->string('email');
 
         });

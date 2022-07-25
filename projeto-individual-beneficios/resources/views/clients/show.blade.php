@@ -4,6 +4,17 @@
 
     <h1 class="mt-4">{{ $client->name }}</h1>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-sm mt-2 mb-3">
+                <a href="{{ route('payments.create', ['id' => $client->id ]) }}" class="btn btn-sm btn-outline-primary">Novo Pagamento</a>
+            </div>
+            <div class="col-sm mt-2 mb-3">
+                <a href="{{ route('payments.show', ['id' => $client->id ]) }}" class="btn btn-sm btn-outline-primary">Ver Pagamentos</a>
+            </div>
+        </div>
+    </div>
+
     <tbody class="text-center">
     <form class="row g-3">
         <div class="col-md-2">

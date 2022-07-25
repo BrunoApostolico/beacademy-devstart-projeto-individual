@@ -5,6 +5,7 @@ use App\Http\Controllers\{
     UserController,
     ClientController,
     DependentController,
+    PaymentController,
     ViaCepController
 };
 
@@ -45,6 +46,15 @@ Route::middleware(['auth'])->group(function (){
     Route::post('/dependent', [DependentController::class, 'store'])->name('dependents.store');
     Route::get('/dependents', [DependentController::class,'index'])->name('dependents.index');
     Route::get('/clients/{id}/dependents',[DependentController::class,'show'])->name('dependents.show');
+
+    //ROTAS PAGAMENTOS
+    Route::delete('/payments/{id}',[PaymentController::class, 'destroy'])->name('payments.destroy');
+    Route::put('/payments/{id}',[PaymentController::class, 'update'])->name('payments.update');
+    Route::get('/payments/{id}/edit', [PaymentController::class, 'edit'])->name('payments.edit');
+    Route::get('/payments/{id}/create',[PaymentController::class,'create'])->name('payments.create');
+    Route::post('/payment', [PaymentController::class, 'store'])->name('payments.store');
+    Route::get('/payments', [PaymentController::class,'index'])->name('payments.index');
+    Route::get('/clients/{id}/payments',[PaymentController::class,'show'])->name('payments.show');
 });
 
 //VIA CEP WEB SERVICE
