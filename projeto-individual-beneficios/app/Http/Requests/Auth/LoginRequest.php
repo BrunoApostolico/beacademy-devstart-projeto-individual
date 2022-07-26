@@ -39,13 +39,7 @@ class LoginRequest extends FormRequest
         RateLimiter::clear($this->throttleKey());
     }
 
-    /**
-     * Ensure the login request is not rate limited.
-     *
-     * @return void
-     *
-     * @throws \Illuminate\Validation\ValidationException
-     */
+
     public function ensureIsNotRateLimited()
     {
         if (! RateLimiter::tooManyAttempts($this->throttleKey(), 5)) {
@@ -64,11 +58,7 @@ class LoginRequest extends FormRequest
         ]);
     }
 
-    /**
-     * Get the rate limiting throttle key for the request.
-     *
-     * @return string
-     */
+
     public function throttleKey()
     {
         return Str::lower($this->input('email')).'|'.$this->ip();

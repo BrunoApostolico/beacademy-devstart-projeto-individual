@@ -17,17 +17,7 @@ Route::get('/' , function(){
 });
 
 
-//ROTA USUÁRIOS
 
-Route::middleware(['auth'])->group(function (){
-    Route::delete('/users/{id}',[UserController::class, 'destroy'])->name('users.destroy');
-    Route::put('/users/{id}',[UserController::class, 'update'])->name('users.update');
-    Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
-    Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
-    Route::post('/user', [UserController::class, 'store'])->name('users.store');
-    Route::get('/users',[UserController::class, 'index'])->name('users.index');
-    Route::get('/users/{id}',[UserController::class, 'show'])->name('users.show');
-});
 
 Route::middleware(['auth'])->group(function (){
     //ROTAS CLIENTES
@@ -46,7 +36,17 @@ Route::middleware(['auth'])->group(function (){
     Route::post('/dependent', [DependentController::class, 'store'])->name('dependents.store');
     Route::get('/dependents', [DependentController::class,'index'])->name('dependents.index');
     Route::get('/clients/{id}/dependents',[DependentController::class,'show'])->name('dependents.show');
+//ROTA USUÁRIOS
 
+    Route::middleware(['auth'])->group(function (){
+        Route::delete('/users/{id}',[UserController::class, 'destroy'])->name('users.destroy');
+        Route::put('/users/{id}',[UserController::class, 'update'])->name('users.update');
+        Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
+        Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
+        Route::post('/user', [UserController::class, 'store'])->name('users.store');
+        Route::get('/users',[UserController::class, 'index'])->name('users.index');
+        Route::get('/users/{id}',[UserController::class, 'show'])->name('users.show');
+    });
     //ROTAS PAGAMENTOS
     Route::delete('/payments/{id}',[PaymentController::class, 'destroy'])->name('payments.destroy');
     Route::put('/payments/{id}',[PaymentController::class, 'update'])->name('payments.update');
