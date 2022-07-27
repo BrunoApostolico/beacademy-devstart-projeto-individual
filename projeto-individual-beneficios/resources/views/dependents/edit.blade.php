@@ -28,6 +28,7 @@
             <input type="text" class="form-control" id="relationship" name="relationship" aria-describedby="Nome" value="{{ $dependent->relationship }}">
         </div>
         <button type="submit" class="btn btn-sm btn-outline-primary">Atualizar</button>
+        <a href="{{ route('clients.index') }}" class="btn btn-sm btn-outline-primary">Voltar </a>
     </form>
 
 @endsection

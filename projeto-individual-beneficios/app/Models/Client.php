@@ -32,9 +32,10 @@ class Client extends Model
             if($search){
                 $query->where('email', $search);
                 $query->orwhere('name', 'LIKE', "%{$search}%");
+                $query->orwhere('cpf', 'LIKE', "%{$search}%");
             }
         })
-            ->paginate(6);
+            ->paginate(5);
 
         return $clients;
     }

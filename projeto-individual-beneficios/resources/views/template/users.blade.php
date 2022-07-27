@@ -8,8 +8,11 @@
     <title>@yield('title')</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
+<div>
+    <a href="/"> <img id="myImg" src="{{Storage::url('logo.png')}}" class="mt-2" alt="AlterMed" width="10%"> </a>
+</div>
 <body>
-    <div class="container w-85 p-3">
+    <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <div class="container-fluid">
@@ -29,7 +32,7 @@
                                     </li>
                             </ul>
                         </div>
-                        <div class="col-3">
+                            <div class="col-3">
                             <ul class="navbar-nav mr-auto">
                                 @if (Auth::user()->is_admin == 1)
                                     <li class="nav-item">

@@ -14,12 +14,14 @@
 
     <form action="{{route('payments.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
-        <div class="mb-3">
+        <div class="row g-3 align-items-center">
+        <div>
             <input type="hidden" class="form-control" id="client_id" name="client_id" aria-describedby="Cliente" value="{{ $client->id }}">
         </div>
-        <div class="mb-3">
+        <div class="mb-5 col-auto">
             <label for="date_payment" class="form-label">Data do Pagamento</label>
             <input type="date" class="form-control" id="date_payment" name="date_payment">
+        </div>
         </div>
         <button type="submit" class="btn btn-sm btn-outline-primary">Enviar</button>
     </form>
