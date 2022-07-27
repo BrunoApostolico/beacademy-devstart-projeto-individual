@@ -23,7 +23,7 @@ class Payment extends Model
                 $query->where('client_id', $search);
             }
         })
-            ->paginate(5);
+            ->paginate(12);
 
         return $payments;
     }

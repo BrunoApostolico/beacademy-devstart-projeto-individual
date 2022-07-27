@@ -40,7 +40,7 @@
         </table>
     </div>
     <div class="justify-content-center pagination">
-
+        {{ $payments->links('pagination::bootstrap-4') }}
     </div>
 
 @endsection
