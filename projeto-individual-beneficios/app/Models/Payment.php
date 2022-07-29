@@ -18,9 +18,11 @@ class Payment extends Model
 
     public function getPayments(string $search = null)
     {
+
         $payments = $this->where(function ($query) use ($search) {
             if($search){
                 $query->where('client_id', $search);
+                $query->orderBy('client_id');
             }
         })
             ->paginate(12);
