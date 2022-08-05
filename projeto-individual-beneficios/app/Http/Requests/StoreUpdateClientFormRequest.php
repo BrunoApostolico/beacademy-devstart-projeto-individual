@@ -15,6 +15,7 @@ class StoreUpdateClientFormRequest extends FormRequest
     {
         $id = $this->id ?? '';
         $rules = [
+            'code' => 'required|string|max:10|min:5',
             'name' => 'required|string|max:50|min:3',
             'email' => [
                 'required',

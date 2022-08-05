@@ -7,6 +7,7 @@ use App\Models\Client;
 use App\Models\Dependent;
 use App\Models\Payment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PaymentController extends Controller
 {
@@ -52,7 +53,7 @@ class PaymentController extends Controller
 
         $this->model->create($data);
 
-        return redirect()->route('payments.index');
+        return redirect()->route('payments.show',['client_id']);
     }
     public function edit($id)
     {

@@ -14,6 +14,7 @@ class Client extends Model
     use HasApiTokens, HasFactory, Notifiable;
 
     protected $fillable = [
+        'code',
         'name',
         'date_birth',
         'cpf',
@@ -30,7 +31,7 @@ class Client extends Model
     {
         $clients = $this->where(function ($query) use ($search) {
             if($search){
-                $query->where('email', $search);
+                $query->where('code', $search);
                 $query->orwhere('name', 'LIKE', "%{$search}%");
                 $query->orwhere('cpf', 'LIKE', "%{$search}%");
             }

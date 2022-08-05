@@ -30,10 +30,9 @@
             <tbody class="text-center">
             @foreach($payments as $payment)
                 <tr>
-                    <th scope="row">{{ $payment->client->id }}</th>
+                    <th scope="row">{{ $payment->client->code }}</th>
                     <td>{{ $payment->client->name }}</td>
-                    <td>{{ date('d/m/Y - H:i', strtotime($payment->date_payment)) }}</td>
-
+                    <td>{{ date('d/m/Y', strtotime($payment->date_payment)) }}</td>
                 </tr>
             @endforeach
             </tbody>

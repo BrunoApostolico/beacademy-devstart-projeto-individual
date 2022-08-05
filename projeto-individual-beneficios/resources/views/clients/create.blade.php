@@ -15,6 +15,10 @@
     <form action="{{ route('clients.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
+            <label for="code" class="form-label">Matrícula</label>
+            <input type="text" class="form-control" id="code" name="code" aria-describedby="Code">
+        </div>
+        <div class="mb-3">
             <label for="name" class="form-label">Nome</label>
             <input type="text" class="form-control" id="name" name="name" aria-describedby="Nome">
         </div>

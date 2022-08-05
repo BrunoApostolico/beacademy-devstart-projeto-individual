@@ -17,7 +17,7 @@
     <form class="row g-3" action="{{ route('clients.index') }}" method="GET">
         <div class="col-md-2">
             <label for="id" class="form-label">Matrícula</label>
-            <input type="text" class="form-control" id="id" value="{{ $client->id }}" readonly>
+            <input type="text" class="form-control" id="id" value="{{ $client->code }}" readonly>
         </div>
         <div class="col-md-5">
             <label for="email" class="form-label">Email</label>

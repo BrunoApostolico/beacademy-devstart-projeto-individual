@@ -12,7 +12,7 @@
             <div class="col-sm mt-2 mb-3">
                 <form action="{{ route('clients.index') }}" method="GET">
                     <div class="input-group">
-                        <input type="search" class="form-control rounded" name="search" placeholder="Informe CPF, nome ou e-mail" />
+                        <input type="search" class="form-control rounded" name="search" placeholder="Informe Matrícula, CPF ou Nome" />
                         <button type="submit" class="btn btn-sm btn-outline-primary">Pesquisar</button>
                     </div>
                 </form>
@@ -36,7 +36,7 @@
         <tbody class="text-center">
         @foreach($clients as $client)
             <tr>
-                <th scope="row">{{ $client->id }}</th>
+                <th scope="row">{{ $client->code }}</th>
                 <td>{{ $client->name }}</td>
                 <td>{{ $client->cpf }}</td>
                 <td>{{ $client->phone1 }}</td>

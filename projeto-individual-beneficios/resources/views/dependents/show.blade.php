@@ -15,20 +15,16 @@
     <table class="table">
         <thead class="text-center">
         <tr>
-
-            <th scope="col">Id</th>
             <th scope="col">Nome</th>
             <th scope="col">Filiação</th>
             <th scope="col">CPF</th>
             <th scope="col">Data de Nascimento</th>
             <th scope="col">Ações</th>
-
         </tr>
         </thead>
         <tbody class="text-center">
         @foreach($dependents as $dependent)
             <tr>
-                <th scope="row">{{ $dependent->id }}</th>
                 <td>{{ $dependent->name }}</td>
                 <td>{{ $dependent->relationship }}</td>
                 <td>{{ $dependent->cpf }}</td>
